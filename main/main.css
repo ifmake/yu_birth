@@ -1,0 +1,223 @@
+*{margin: 0;padding: 0;cursor: pointer};
+html,body {
+    width: 100%;
+    height: 100%;
+}
+label {
+    padding-right: 10px;
+}
+.yu_birth {
+    width: 800px;
+    height: 400px;
+    margin:0 auto ;
+    transform: translateY(40%);
+    border-radius: 2px; 
+}
+.pages{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all ease-in-out 2s;
+    z-index: 1;
+    overflow: hidden;
+}
+/*第一层*/
+.first {
+    background: url('../images/birth_bg.jpg') 0 0 no-repeat;
+    background-size: 100%;
+    display: block;
+}
+.firt_bg {
+    position: absolute;
+    width: 200px;
+    height: 150px;
+    overflow: hidden;
+    background: url('../images/meigui.png') no-repeat;
+}
+.firt_bg1{
+    top: 0;
+    left: 0;
+    background-position: 0 0 ;
+}
+.firt_bg2{
+    top: 0;
+    right:0;
+    background-position: 10px -235px;
+}
+.firt_bg3{
+       top: 210px;
+       right: 13%;
+       background-position: -450px -235px;
+}
+.firt_bg4{
+    top: 210px;
+    left: 13%;
+    background-position: -250px -235px;
+}
+.first_love {
+    width: 200px;
+    height: 200px;
+    background: rgb(255, 60, 105);
+    margin: 0 auto;
+    border-radius: 10px;
+    transform: translateY(70%) rotate(45deg);
+    position: relative;
+    animation: heartAnimate ease-in-out 2s infinite;
+}
+.first_love:after, .first_love:before {
+    content: '';
+    width: inherit;
+    height: inherit;
+    background: inherit;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    position: absolute;
+   
+}
+.first_love:after{
+  top:0px;
+  left:-90px;
+}
+.first_love:before{
+  left: 0px;
+  top: -90px;
+}
+.first_birth{
+    position: absolute;
+    z-index: 99;
+    transform: translate(50%) rotate(-45deg);
+    left: -45%;
+    top: 16%;
+    font-size: 20px;
+    color: #fff;
+}
+.birth_cake {
+    position: absolute;
+    top: 80px;
+    width: 50%;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.second {
+    background: rgba(250, 44, 51, 0.5);
+}
+/*第三层*/
+.three {
+    background: url('../images/baozheng.jpeg') 0 0 no-repeat;
+    background-size: 100%;
+}
+.three_text {
+    width: calc(100% + 15px);
+    height: 400px;
+    overflow: auto;
+}
+.three_title{
+    width: 100%;
+    text-align: center;
+    font-size: 24px;
+    margin-top: 30px;
+}
+.three_content {
+    width: 80%;
+    padding: 20px 10%;
+    text-indent: 20px;
+    line-height: 2;
+}
+.three_btn {
+    width: 60%;
+    padding: 20px 20%;
+}
+.content_input {
+    width: 100%;
+    padding-bottom: 20px;
+    display: flex;
+    flex-flow:row nowrap;
+    justify-content: flex-start;
+}
+.supply {
+    width: 300px;
+    height: 80px;
+    outline: none;
+    font-size: 16px;
+}
+.yuname {
+    border: 0;
+    margin:0  20px;
+    outline: none;
+    background: #f8f4f5;
+    font-size: 16px;
+}
+.sure {
+    width: 80px;
+    height: 30px;
+    background: #fc406c;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 5px;
+    color: #fff;
+}
+.note1 { 
+    display: none;
+    padding-top:10px;
+    color: #fc406c;
+}
+.note2 { 
+    padding: 10px 0;
+}
+/*上下翻页*/
+.oper_btn{
+    position: absolute;
+    bottom: 0;
+    width: 80px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    color: #fae6ef;
+    transition:  all linear 0.5s;
+    z-index: 3;
+}
+.oper_btn:hover{
+    background: rgb(255, 62, 107);
+    color: #fff;
+}
+.next {
+    right: 0;
+    border-top: 1px solid #fff;
+    border-left: 1px solid #fff;
+    border-top-left-radius: 5px;
+}
+.prov {
+    left: 0;
+    border-top: 1px solid #fff;
+    border-right: 1px solid #fff;
+    border-top-right-radius: 5px;
+    /* display: none; */
+}
+/*组件样式*/
+.heart {width: 10px;height: 10px;position: fixed;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}
+.heart:after,.heart:before{content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: fixed;}
+.heart:after{top: -5px;}
+.heart:before{left: -5px;}
+.love_text { width: 50px;height: 10px;position: fixed; text-align: center;}
+/*动画*/
+@keyframes heartAnimate {
+    0%{
+    width: 200px;
+    height: 200px;
+    transform:translateY(calc(50%)) rotate(45deg);
+    }
+    50% {
+    width: 210px;
+    height: 210px;
+    transform:translateY(calc(50% -10px)) rotate(45deg);
+    }
+    100% {
+    width: 200px;
+    height: 200px;
+    transform:translateY(calc(50%)) rotate(45deg)
+    }
+}

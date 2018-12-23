@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./main/main.css">
+    <title>雨生日快乐</title>
+</head>
+<style>
+
+</style>
+
+<body>
+    <div class="yu_birth">
+        <div class="first pages" style="display:block">
+            <!-- <div class="firt_bg firt_bg1"></div>
+            <div class="firt_bg firt_bg2"></div>
+            <div class="firt_bg firt_bg3"></div>
+            <div class="firt_bg firt_bg4"></div> -->
+            <!--第一层-->
+            <div class="first_love">
+                <div class="first_birth">
+                    雨生日快乐
+                </div>
+            </div>
+            <div class="birth_cake">
+                <img class="birth_cake" src="./images/rain_cake.png" alt="">
+            </div>
+        </div>
+        <div class="second pages" style="display:none">
+            <!--第二层-->
+            <div class="first_love">
+                <div class="first_birth">
+                    把我自己送给你
+                </div>
+            </div>
+        </div>
+        <div class="three pages" style="display:none">
+            <div class="three_text">
+                <!--第3层-->
+                <div class="three_title"> 保证书</div>
+                <div class="three_content">
+                    我任志量向丁雨发誓：
+                    我保证以后不会再出现不理你，发消息打电话不回的情况，以后如果有同样的情况发生，需先告知情况，不让对方担心，
+                    如果以后再有同样的事情发生，我就的好好补偿，带你吃好吃的，好玩的，买你想买的，以后要以你为中心，你才是我的首位，
+                    如感觉惩罚力度不够，可在下放自行补充
+                </div>
+                <div class="three_btn">
+                    <div class="content_input">
+                        <label>补充惩罚：</label>
+                        <textarea class="supply" id="SupplyVolume"></textarea>
+                    </div>
+                    <div class="content_input">
+                        <label>双方签字:</label>
+                        <input type="text" class="yuname" id="YuName" placeholder="请签名" />
+                        <p>任志量</p>
+                    </div>
+                    <div class="sure" id="sureBtn">确定</div>
+                    <div class="note1" id="Success">以后你就是我的了，哈哈</div>
+                    <div class="note2"> *注：确定后长期有效</div>
+                </div>
+            </div>
+        </div>
+        <div class="opereate">
+            <div class="prov oper_btn" id="Prov" onclick="changePage('prov')">prov</div>
+            <div class="next oper_btn" id="Next" onclick="changePage('next')">next</div>
+        </div>
+    </div>
+    <script src="./main/main.js"></script>
+</body>
+
+</html>
