@@ -1,5 +1,8 @@
  // 全局变量
  var page = 1;
+ const leafs = 20;
+ let textIndex = 0;
+ const love_yu = '我喜欢下雨天，是因为有你的名字    ——久雨亭依'
  // 鼠标点击出现❤️
  document.addEventListener('click', function(ev) {
      ev.stopPropagation();
@@ -44,7 +47,7 @@
        return color;
    }
 
- // 页面序列
+ // 页面序列(数据结构，可暂时不看)
  var pageQueue = (function() {
      function exchangePage() {
          this._pages = []
@@ -96,7 +99,8 @@
      var tip = document.getElementById('Success')
      console.log('是否监听到')
      if(window.localStorage) {
-         if(yuName.value && yuName.value !== '丁雨') {
+         console.log(yuName.value)
+         if(yuName.value==='' && yuName.value !== '丁雨') {
              alert('请填写正确的名称')
              return;
          }
@@ -122,6 +126,56 @@
           yuName.disabled = true;
         }
       }
-     
     }
+    var showText = setInterval(function() {
+        var YUCONTENT =  document.getElementById('YlContent')
+        YUCONTENT.innerHTML = love_yu.substr(0, textIndex++);
+        if(textIndex > love_yu.length) {
+            clearInterval(showText)
+        }
+    }, 100);
  }
+
+ /**
+  * 树叶飘落效果————————————————————————————————————————————————
+  */
+ function init() {
+    var container = document.getElementById('leafContainer');
+    for (var i = 0; i < leafs; i++) {
+        container.appendChild(createALeaf());
+    }
+    
+}
+function randomInteger(low, high) {
+    return low + Math.floor(Math.random() * (high - low));
+}
+function randomFloat(low, high) {
+    return low + Math.random() * (high - low);
+}
+function pixelValue(value) {
+    return value + 'px';
+}
+function durationValue(value) {
+    return value + 's';
+}
+function createALeaf() {
+    var leafDiv = document.createElement('div');
+    leafDiv.style.left = "0px",
+    leafDiv.style.top = pixelValue(randomInteger(0, 300));
+    leafDiv.style.webkitAnimationName = 'fade, drop';
+    var fadeAndDropDuration = durationValue(randomFloat(7, 11));
+    leafDiv.style.webkitAnimationDuration = fadeAndDropDuration + ', ' + fadeAndDropDuration;
+    var leafDelay = durationValue(randomFloat(0, 5));
+    leafDiv.style.webkitAnimationDelay = leafDelay + ', ' + leafDelay;
+
+    var image = document.createElement('img');
+    image.src = './images/heart1.png';
+    var spinAnimationName = (Math.random() < 0.5) ? 'clockwiseSpin' : 'counterclockwiseSpinAndFlip';
+    image.style.webkitAnimationName = spinAnimationName;
+    var spinDuration = durationValue(randomFloat(4, 8));
+    image.style.webkitAnimationDuration = spinDuration;
+
+    leafDiv.appendChild(image);
+    return leafDiv;
+}
+

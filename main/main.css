@@ -89,7 +89,7 @@ label {
     position: absolute;
     z-index: 99;
     transform: translate(50%) rotate(-45deg);
-    left: -45%;
+    left: -25%;
     top: 16%;
     font-size: 20px;
     color: #fff;
@@ -103,7 +103,69 @@ label {
 }
 
 .second {
-    background: rgba(250, 44, 51, 0.5);
+    background: url('../images/love_bg.jpg') 0 0 no-repeat;
+    background-size: contain;
+}
+.second_birth {
+    position: absolute;
+    z-index: 99;
+    transform: translate(50%) rotate(-45deg);
+    left: -45%;
+    top: 16%;
+    font-size: 20px;
+    color: #fff;
+}
+.leafs {
+  width:600px;
+  height: 400px;
+  position: absolute;
+  top:160px;
+  left: 150px;
+  transform: rotate(30deg);
+}
+.leafs >div {
+    width: 20px;
+    height: 20px;
+    opacity: 0;
+    position: absolute;
+    /* background: url() 0 0 no-repeat;
+    background-size: contain; */
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-direction: normal;
+    -webkit-animation-timing-function: linear;
+}
+.leafs>div>img{
+    position: absolute;
+    width: 100%;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+    -webkit-animation-timing-function: ease-in-out;
+    -webkit-transform-origin: 50% -100%;
+}
+.yu_love {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+.yl_title {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    right: 250px;
+    top: 60px;
+}
+.yl_title > img {
+    width: 100%;
+}
+.yl_content {
+    position: absolute;
+    right: 300px;
+    top: 100px;
+    width: 40px;
+    height:270px;
+    letter-spacing: 4px;
+    writing-mode:vertical-rl;
+    writing-mode:tb-rl;
 }
 /*第三层*/
 .three {
@@ -220,4 +282,45 @@ label {
     height: 200px;
     transform:translateY(calc(50%)) rotate(45deg)
     }
+}
+/*逐渐消失*/
+@-webkit-keyframes fade{
+    0%   { 
+        opacity: 0; 
+        transform:rotate(0deg);
+    }
+    5%   {
+        opacity: 1;
+        transform:rotate(360deg);
+    }
+    30%  {
+        transform:rotate(0deg);
+    }
+    95%  { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+@-webkit-keyframes drop{
+    0%   { -webkit-transform: translate(-50px, 30px); }
+    100% { -webkit-transform: translate(350px, 100px); }
+}
+
+@-webkit-keyframes clockwiseSpin{
+    0%   { -webkit-transform: rotate(-50deg); }
+    100% { -webkit-transform: rotate(50deg); }
+}
+
+
+@-webkit-keyframes counterclockwiseSpinAndFlip  {
+    0%   { 
+        -webkit-transform: scale(-1, 1) rotate(50deg);
+        width: 100%;
+     }
+     50% {
+         width: 150%
+     }
+    100% {
+        width: 100%;
+         -webkit-transform: scale(-1, 1) rotate(-50deg);
+        }
 }
